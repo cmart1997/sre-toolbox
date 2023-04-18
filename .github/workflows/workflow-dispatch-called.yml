@@ -1,8 +1,25 @@
 name: hello-world
-on: push
+on: 
+  workflow_call:
+    inputs:
+      name:
+        description: 'A name passed from the caller workflow'
+        required: true
+        type: string
+        options:
+          - "John"
+          - "Doe"
+      greeting:
+        description: 'A greeting passed from the caller workflow'
+        required: true
+        type: choice
+        options:
+          - "Hello"
+          - "Hi"
+          - "Hey"
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
       - name: my-step
-        run: echo "Hello World!"
+        run: echo "${{ inputs.greeting }} ${{ inputs.name }}!"
