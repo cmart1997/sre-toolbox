@@ -1,0 +1,14 @@
+name: Manual | GitHub Actions Demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: 'A username passed from the caller workflow'
+        default: 'john-doe'
+        required: false
+        type: string
+
+jobs:
+  gitHub-actions-demo:
+    uses: cmart1997/sre-toolbox/.github/workflows/on-push-job.yml@main
