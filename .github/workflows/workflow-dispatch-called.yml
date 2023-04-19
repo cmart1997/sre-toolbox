@@ -6,17 +6,12 @@ on:
         description: 'A name passed from the caller workflow'
         required: true
         type: string
-        options:
-          - "John"
-          - "Doe"
+
       greeting:
         description: 'A greeting passed from the caller workflow'
         required: true
-        type: choice
-        options:
-          - "Hello"
-          - "Hi"
-          - "Hey"
+        type: string
+        
 jobs:
   my-job:
     runs-on: ubuntu-latest

@@ -2,9 +2,27 @@ name: Manual | GitHub Actions Demo
 
 on:
   workflow_dispatch:   
+    inputs:
+      chosen_name: 
+        description: 'A name passed from the caller workflow'
+        required: true
+        type: string
+        options:
+          - "John"
+          - "Doe"
+      chosen_greeting:
+        description: 'A greeting passed from the caller workflow'
+        required: true
+        type: string
+        options:
+          - "Hello"
+          - "Hi"
+          - "Hey"
 
 jobs:
   gitHub-actions-demo:
     name: Hello GitHub Actions Demo
     uses: cmart1997/sre-toolbox/.github/workflows/workflow-dispatch-called.yml@main
+    with:   
+      name: ${{ chosen_name}}
     
