@@ -24,5 +24,6 @@ jobs:
     name: Hello GitHub Actions Demo
     uses: cmart1997/sre-toolbox/.github/workflows/workflow-dispatch-called.yml@main
     with:   
-      name: ${{ chosen_name}}
+      name: ${{ inputs.chosen_name}}
+      greeting: ${{ inputs.chosen_greeting}}
     
