@@ -10,6 +10,7 @@ on:
         options:
           - "John"
           - "Doe"
+
       chosen_greeting:
         description: 'A greeting passed from the caller workflow'
         required: true
@@ -18,6 +19,14 @@ on:
           - "Hello"
           - "Hi"
           - "Hey"
+
+      chosen_ending:
+        description: 'A ending passed from the caller workflow'
+        type: choice
+        options:
+          - "!"
+          - "?"
+          - "."
 
 jobs:
   gitHub-actions-demo:
