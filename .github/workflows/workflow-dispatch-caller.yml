@@ -6,14 +6,14 @@ on:
       chosen_name: 
         description: 'A name passed from the caller workflow'
         required: true
-        type: string
+        type: choice
         options:
           - "John"
           - "Doe"
       chosen_greeting:
         description: 'A greeting passed from the caller workflow'
         required: true
-        type: string
+        type: choice
         options:
           - "Hello"
           - "Hi"
